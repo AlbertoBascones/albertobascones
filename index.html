@@ -1,116 +1,91 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alberto Báscones</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        section {
-            padding: 2rem;
-            margin: 1rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #4CAF50;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            background: #f9f9f9;
-            margin: 0.5rem 0;
-            padding: 0.5rem;
-            border-left: 4px solid #4CAF50;
-        }
-        .contact-info, .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .contact-info div, .social-links a {
-            background: #4CAF50;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Alberto Báscones</h1>
-        <p>Cloud Architect | SysOps | Scuba Diver | Biker | Coffee Lover</p>
-    </header>
+---
+layout: blog
+title: index
+permalink: /
+---
 
-    <section>
-        <h2>Acerca de mí</h2>
-        <p>Vivo en Zaragoza, ciudad del cierzo, España. Enamorado de la informática y los deportes en equipo.</p>
-    </section>
+<div class="navbar-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top" id="i18_title"><span data-i18n="website.title">{{ site.title }}</span></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right" id="i18_navbar">
+                {% for section in site.sections %}
+                    <li>
+                      <a class="page-scroll" href="#{{ section.id }}">
+                        <span data-i18n="{{ section.i18n }}">{{ section.name }}</span>
+                      </a>
+                    </li>
+                {% endfor %}
 
-    <section>
-        <h2>Habilidades</h2>
-        <ul>
-            <li><strong>Cloud Architect:</strong> Diseño de soluciones escalables y seguras, optimización de recursos y documentación mediante IAC y Git.</li>
-            <li><strong>SysOps:</strong> Resolución rápida de incidencias, gestión de SLA's y documentación de procedimientos.</li>
-            <li><strong>NoOps:</strong> Automatización de operaciones manuales, migración a PaaS o SaaS, y desarrollo de código eficiente y elegante.</li>
-            <li><strong>Helpdesk:</strong> Atención al usuario, solución de incidencias y coordinación de equipos CAU siguiendo prácticas ITIL.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Experiencia</h2>
-        <ul>
-            <li><strong>2025 - Cloud Architect AWS, BBVA Technology:</strong> Como tech en el agua.</li>
-            <li><strong>2023 - Cloud Architect AWS, NTT Data:</strong> Diseñando soluciones innovadoras y eficientes.</li>
-            <li><strong>2022 - Cloud Architect AWS, Serbatic:</strong> El gusto de sentirse en familia.</li>
-            <li><strong>2019 - Cloud Engineer AWS, DXC.technology:</strong> Afrontando nuevos retos.</li>
-            <li><strong>2015 - Operations & Service Management, Apser:</strong> No Gurus, no Geeks. Just Professionals.</li>
-            <li><strong>2014 - Freelance, Zaragoza Activa:</strong> Administración de servidores Linux y colaboración en proyectos web & apps.</li>
-            <li><strong>2013 - Administrador de Sistemas, Cingral:</strong> Gestión de servidores Windows y hosting en Debian.</li>
-            <li><strong>2012 - Programador Web, Avaibook:</strong> Migración de interfaces y desarrollo en PHP & jQuery.</li>
-            <li><strong>2010 - Administrador de Sistemas, Grupo Horcona:</strong> Gestión de servidores Windows y formación a usuarios.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Educación</h2>
-        <ul>
-            <li><strong>2012 - GS Desarrollo de Aplicaciones, MARÍA MONTESSORI:</strong> Ampliación de conocimientos en desarrollo de aplicaciones.</li>
-            <li><strong>2008 - GS Administrador de Sistemas, MARÍA MONTESSORI:</strong> Formación en administración de sistemas informáticos.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Contacto</h2>
-        <div class="contact-info">
-            <div>Email: [email protected]</div>
-            <div>Ubicación: Zaragoza, España</div>
+                {% for language in site.languages %}
+                  <li>
+                    <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
+                      <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
+                    </a>
+                  </li>
+                {% endfor %}
+                </ul>
+            </div>
         </div>
-    </section>
-
-    <section>
-        <h2>Redes Sociales</h2>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/albertobascones" target="_blank">LinkedIn</a>
-            <a href="https://github.com/albertobascones" target="_blank">GitHub</a>
-            <a href="https://twitter.com/albertobascones" target="_blank">Twitter</a>
+    </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+	<li data-target="#inSlider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
         </div>
-    </section>
-</body>
-</html>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back three"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+{% for section in site.sections %}
+  {% assign loopindex = forloop.index | modulo: 2 %}
+  <section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.css }}" style="margin-top: 0px;">
+    {% include sections/{{section.tpl}} %}
+  </section>
+{% endfor %}

@@ -6,63 +6,84 @@
     <title>Mi Currículum</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             background-color: #f4f4f9;
             color: #333;
         }
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background: #4CAF50;
             color: #fff;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
+            font-size: 2rem;
+        }
+        header p {
+            margin: 0;
+            font-size: 1rem;
         }
         .container {
-            width: 80%;
-            margin: 2rem auto;
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding-top: 6rem;
         }
         section {
-            margin-bottom: 2rem;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        section:nth-child(even) {
+            background-color: #f9f9f9;
         }
         h2 {
+            font-size: 2rem;
             color: #4CAF50;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 0.5rem;
             margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 0 auto 2rem;
+            max-width: 600px;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
         .contact a {
+            display: inline-block;
+            margin: 0 1rem;
             color: #4CAF50;
             text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .contact a:hover {
+            color: #333;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Tu Nombre</h1>
-        <p>Cloud Arquitecto | Especialista en AWS | Villanueva de Gállego</p>
+        <p>Cloud Arquitecto | Especialista en AWS</p>
     </header>
 
     <div class="container">
         <!-- Perfil Profesional -->
         <section>
             <h2>Perfil Profesional</h2>
-            <p>Soy un arquitecto cloud especializado en AWS con experiencia en diseño, implementación y optimización de soluciones escalables y seguras. Apasionado por la tecnología y siempre en busca de nuevos desafíos.</p>
+            <p>Soy un arquitecto cloud especializado en AWS con experiencia en diseño, implementación y optimización de soluciones escalables y seguras.</p>
         </section>
 
         <!-- Experiencia Laboral -->
@@ -70,12 +91,12 @@
             <h2>Experiencia Laboral</h2>
             <ul>
                 <li>
-                    <strong>Cloud Arquitecto - NTT Data</strong> (2023 - Actualidad)
-                    <p>Responsable del diseño de arquitecturas en AWS, optimización de costes y adopción de prácticas DevOps.</p>
+                    <strong>Cloud Arquitecto - NTT Data</strong> (2023 - Actualidad)<br>
+                    Responsable del diseño de arquitecturas en AWS, optimización de costes y adopción de prácticas DevOps.
                 </li>
                 <li>
-                    <strong>DevOps Engineer - Empresa Anterior</strong> (2020 - 2023)
-                    <p>Implementación de pipelines CI/CD y monitorización de entornos productivos.</p>
+                    <strong>DevOps Engineer - Empresa Anterior</strong> (2020 - 2023)<br>
+                    Implementación de pipelines CI/CD y monitorización de entornos productivos.
                 </li>
             </ul>
         </section>
@@ -104,11 +125,9 @@
         <!-- Contacto -->
         <section class="contact">
             <h2>Contacto</h2>
-            <ul>
-                <li>Email: <a href="mailto:tuemail@example.com">tuemail@example.com</a></li>
-                <li>GitHub: <a href="https://github.com/tuusuario" target="_blank">github.com/tuusuario</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/tuusuario" target="_blank">linkedin.com/in/tuusuario</a></li>
-            </ul>
+            <a href="mailto:tuemail@example.com">✉️ Email</a>
+            <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
         </section>
     </div>
 </body>
